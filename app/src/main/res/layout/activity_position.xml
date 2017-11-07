@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    tools:context="com.codesch.afdolash.meetpoint.activity.PositionActivity">
+
+    <ImageView
+        android:id="@+id/img_app"
+        android:layout_width="wrap_content"
+        android:layout_height="110dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/meetpoint_green" />
+
+    <TextView
+        android:id="@+id/tv_currentPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kami mendeteksi lokasi kamu berada di"
+        android:layout_marginBottom="4dp"/>
+
+    <TextView
+        android:id="@+id/tv_point"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sukolilo, Surabaya"
+        android:textSize="24sp"
+        android:textColor="@color/colorLightGreen800"
+        android:layout_marginBottom="24dp"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_accept"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:cardBackgroundColor="@color/colorLightGreen800"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="TERIMA"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:id="@+id/view_separator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center">
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:background="@color/colorLightGreen800" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ATAU"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/colorLightGreen800"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"/>
+
+        <View
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:background="@color/colorLightGreen800" />
+
+    </LinearLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_explore"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        app:cardBackgroundColor="@color/colorLightGreen800"
+        android:layout_marginRight="24dp"
+        android:layout_marginLeft="24dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginTop="4dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="ATUR LOKASI"
+                android:textColor="@color/colorWhite"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:id="@+id/tv_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kamu juga dapat merubah lokasi kamu pada filter"
+        android:layout_marginTop="24dp"/>
+
+</LinearLayout>
