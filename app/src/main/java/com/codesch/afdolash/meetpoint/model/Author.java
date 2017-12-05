@@ -5,39 +5,49 @@ package com.codesch.afdolash.meetpoint.model;
  */
 
 public class Author {
-    private String name, title, badge, image;
-    private Double totalRate, totalLiker;
+    private int id_user;
+    private String nama_user;
+    private String link_fb_user;
+    private float rating_user;
+    private String contact_user;
+    private int umur_user;
+    private String jenis_kelamin_user;
 
-    public Author(String name, String title, String badge, String image, Double totalRate, Double totalLiker) {
-        this.name = name;
-        this.title = title;
-        this.badge = badge;
-        this.image = image;
-        this.totalRate = totalRate;
-        this.totalLiker = totalLiker;
+    public Author(int id_user, String nama_user, String link_fb_user, float rating_user, String contact_user, int umur_user, String jenis_kelamin_user) {
+        this.id_user = id_user;
+        this.nama_user = nama_user;
+        this.link_fb_user = link_fb_user;
+        this.rating_user = rating_user;
+        this.contact_user = contact_user;
+        this.umur_user = umur_user;
+        this.jenis_kelamin_user = jenis_kelamin_user;
     }
 
-    public String getName() {
-        return name;
+    public int getId_user() {
+        return id_user;
     }
 
-    public String getTitle() {
-        return title;
+    public String getNama_user() {
+        return nama_user;
     }
 
-    public String getBadge() {
-        return badge;
+    public String getLink_fb_user() {
+        return link_fb_user;
     }
 
-    public String getImage() {
-        return image;
+    public float getRating_user() {
+        return rating_user;
     }
 
-    public Double getTotalRate() {
-        return totalRate;
+    public String getContact_user() {
+        return contact_user;
     }
 
-    public Double getTotalLiker() {
-        return totalLiker;
+    public int getUmur_user() {
+        return umur_user;
+    }
+
+    public String getJenis_kelamin_user() {
+        return jenis_kelamin_user;
     }
 }

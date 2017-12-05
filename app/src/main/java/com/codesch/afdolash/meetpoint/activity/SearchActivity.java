@@ -103,14 +103,6 @@ public class SearchActivity extends AppCompatActivity {
         recyclerTimeline.setItemAnimator(new DefaultItemAnimator());
         recyclerTimeline.setAdapter(mTimelineAdapter);
 
-        // Ads Recycler View
-        mAdsAdapter = new EventAdapter(SearchActivity.this, mAdsList);
-        RecyclerView.LayoutManager mAdsManager = new LinearLayoutManager(SearchActivity.this, LinearLayoutManager.HORIZONTAL, false);
-
-        recyclerAds.setLayoutManager(mAdsManager);
-        recyclerAds.setItemAnimator(new DefaultItemAnimator());
-        recyclerAds.setAdapter(mAdsAdapter);
-
         // History Recycler View
         mHistoryAdapter = new HistoryAdapter(SearchActivity.this, mHistoryList);
         RecyclerView.LayoutManager mHistoryManager = new LinearLayoutManager(SearchActivity.this, LinearLayoutManager.VERTICAL, false);
@@ -122,7 +114,6 @@ public class SearchActivity extends AppCompatActivity {
         recyclerHistory.setFocusable(false);
 
         prepareAuthorData();
-        prepareAdsData();
         prepareHistoryData();
     }
 
@@ -143,38 +134,15 @@ public class SearchActivity extends AppCompatActivity {
         return true;
     }
 
-    private void prepareAdsData() {
-        Event event = new Event(
-                "GDG Surabaya",
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-                "Muhibush",
-                "https://www.google.co.id/search?q=event&dcr=0&source=lnms&tbm=isch&sa=X&ved=0ahUKEwjZ2rreqITXAhVEQY8KHQc0AHoQ_AUICigB&biw=1920&bih=984#imgrc=rsbE5iEAHDJWEM:",
-                "Concert",
-                "18 July 2017",
-                "16.00",
-                "18 July 2017",
-                "21.00",
-                -7.267522,
-                112.799088
-        );
-
-        mAdsList.add(event);
-        mAdsList.add(event);
-        mAdsList.add(event);
-        mAdsList.add(event);
-        mAdsList.add(event);
-
-        mAdsAdapter.notifyDataSetChanged();
-    }
-
     private void prepareAuthorData() {
         Author author = new Author(
+                7,
                 "Afdolash",
                 "Administrator",
-                "",
-                "",
-                20000.0,
-                20000.0
+                2.0f,
+                "00000",
+                17,
+                "Pria"
         );
 
         mPeopleList.add(author);

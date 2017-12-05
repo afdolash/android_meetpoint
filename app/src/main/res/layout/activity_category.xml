@@ -45,6 +45,7 @@
                     android:layout_marginBottom="4dp">
 
                     <RelativeLayout
+                        android:id="@+id/relative_coffee"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -72,6 +73,25 @@
 
                         </RelativeLayout>
 
+                        <RelativeLayout
+                            android:id="@+id/cat_coffee"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#afffffff"/>
+
+                            <ImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_check_accent_24dp"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -85,6 +105,7 @@
                     android:layout_marginBottom="4dp">
 
                     <RelativeLayout
+                        android:id="@+id/relative_talkshow"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -112,6 +133,25 @@
 
                         </RelativeLayout>
 
+                        <RelativeLayout
+                            android:id="@+id/cat_talkshow"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#afffffff"/>
+
+                            <ImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_check_accent_24dp"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -134,6 +174,7 @@
                     android:layout_marginBottom="4dp">
 
                     <RelativeLayout
+                        android:id="@+id/relative_workshop"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -161,6 +202,25 @@
 
                         </RelativeLayout>
 
+                        <RelativeLayout
+                            android:id="@+id/cat_workshop"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#afffffff"/>
+
+                            <ImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_check_accent_24dp"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -174,6 +234,7 @@
                     android:layout_marginBottom="4dp">
 
                     <RelativeLayout
+                        android:id="@+id/relative_contest"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -201,6 +262,25 @@
 
                         </RelativeLayout>
 
+                        <RelativeLayout
+                            android:id="@+id/cat_contest"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#afffffff"/>
+
+                            <ImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_check_accent_24dp"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -223,6 +303,7 @@
                     android:layout_marginBottom="4dp">
 
                     <RelativeLayout
+                        android:id="@+id/relative_concert"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -250,6 +331,25 @@
 
                         </RelativeLayout>
 
+                        <RelativeLayout
+                            android:id="@+id/cat_concert"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#afffffff"/>
+
+                            <ImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_check_accent_24dp"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -263,6 +363,7 @@
                     android:layout_marginBottom="4dp">
 
                     <RelativeLayout
+                        android:id="@+id/relative_festival"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -290,6 +391,25 @@
 
                         </RelativeLayout>
 
+                        <RelativeLayout
+                            android:id="@+id/cat_festival"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#afffffff"/>
+
+                            <ImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_check_accent_24dp"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -312,6 +432,7 @@
                     android:layout_marginBottom="4dp">
 
                     <RelativeLayout
+                        android:id="@+id/relative_exhibition"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -339,6 +460,25 @@
 
                         </RelativeLayout>
 
+                        <RelativeLayout
+                            android:id="@+id/cat_exhibition"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#afffffff"/>
+
+                            <ImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_check_accent_24dp"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -352,6 +492,7 @@
                     android:layout_marginBottom="4dp">
 
                     <RelativeLayout
+                        android:id="@+id/relative_community"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -379,6 +520,25 @@
 
                         </RelativeLayout>
 
+                        <RelativeLayout
+                            android:id="@+id/cat_community"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#afffffff"/>
+
+                            <ImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_check_accent_24dp"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -401,6 +561,7 @@
                     android:layout_marginBottom="4dp">
 
                     <RelativeLayout
+                        android:id="@+id/relative_religion"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -428,6 +589,25 @@
 
                         </RelativeLayout>
 
+                        <RelativeLayout
+                            android:id="@+id/cat_religion"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#afffffff"/>
+
+                            <ImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_check_accent_24dp"
+                                android:layout_centerInParent="true"/>
+
+                        </RelativeLayout>
+
                     </RelativeLayout>
 
                 </android.support.v7.widget.CardView>
@@ -441,6 +621,7 @@
                     android:layout_marginBottom="4dp">
 
                     <RelativeLayout
+                        android:id="@+id/relative_social"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -465,6 +646,25 @@
                                 android:text="Social"
                                 android:textColor="@color/colorWhite"
                                 android:textSize="12sp"/>
+
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/cat_social"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:visibility="invisible">
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:background="#afffffff"/>
+
+                            <ImageView
+                                android:layout_width="75dp"
+                                android:layout_height="75dp"
+                                android:src="@drawable/ic_check_accent_24dp"
+                                android:layout_centerInParent="true"/>
 
                         </RelativeLayout>
 

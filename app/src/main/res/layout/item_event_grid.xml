@@ -18,12 +18,18 @@
             android:layout_height="match_parent"
             android:layout_weight="1">
 
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="36dp"
+                android:layout_height="36dp"
+                android:layout_centerInParent="true" />
+
             <ImageView
                 android:id="@+id/img_event"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/talkshow"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop"
+                android:src="@drawable/talkshow" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
@@ -33,31 +39,33 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="82dp"
-                    android:background="@drawable/layout_black_tranparent"
-                    android:layout_alignParentBottom="true"/>
+                    android:layout_alignParentBottom="true"
+                    android:background="@drawable/layout_black_tranparent" />
 
                 <TextView
                     android:id="@+id/tv_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sab, 12 Feb"
-                    android:textSize="12sp"
-                    android:textColor="@color/colorWhite"
                     android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:layout_marginBottom="8dp"/>
+                    android:layout_marginTop="2dp"
+                    android:text="Sab, 12 Feb"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/tv_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="GDG Surabaya"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorWhite"
                     android:layout_above="@id/tv_date"
                     android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"/>
+                    android:layout_marginRight="8dp"
+                    android:maxLines="2"
+                    android:text="GDG Surabaya"
+                    android:textColor="@color/colorWhite"
+                    android:textStyle="bold" />
 
             </RelativeLayout>
         </RelativeLayout>

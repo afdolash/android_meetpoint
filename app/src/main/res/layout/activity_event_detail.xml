@@ -24,6 +24,7 @@
             app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <ImageView
+                android:id="@+id/img_event_bg"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/test"
@@ -35,6 +36,7 @@
                 android:background="#4b000000" />
 
             <ImageView
+                android:id="@+id/img_event"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:src="@drawable/test"
@@ -44,7 +46,6 @@
                 android:id="@+id/toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:title="@string/app_name"
                 app:layout_collapseMode="pin"/>
 
         </android.support.design.widget.CollapsingToolbarLayout>
