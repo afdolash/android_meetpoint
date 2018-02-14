@@ -1,13 +1,20 @@
 package com.codesch.afdolash.meetpoint.utils;
 
 import android.content.Context;
+import android.content.Intent;
+import android.widget.Toast;
 
+import com.codesch.afdolash.meetpoint.activity.EventDetailActivity;
 import com.codesch.afdolash.meetpoint.activity.MapsActivity;
 import com.codesch.afdolash.meetpoint.model.Event;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.maps.android.clustering.Cluster;
 import com.google.maps.android.clustering.ClusterManager;
 import com.google.maps.android.clustering.view.DefaultClusterRenderer;
+
+import java.util.Collection;
 
 /**
  * Created by Afdolash on 11/17/2017.

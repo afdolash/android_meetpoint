@@ -8,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.codesch.afdolash.meetpoint.R;
 import com.codesch.afdolash.meetpoint.adapter.AuthorAdapter;
@@ -18,10 +19,15 @@ import com.codesch.afdolash.meetpoint.adapter.TimelineAdapter;
 import com.codesch.afdolash.meetpoint.model.Author;
 import com.codesch.afdolash.meetpoint.model.Event;
 import com.codesch.afdolash.meetpoint.model.History;
+import com.codesch.afdolash.meetpoint.services.ApiServices;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SearchActivity extends AppCompatActivity {
 
@@ -76,6 +82,29 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onSearchViewClosed() {
                 //Do some magic
+            }
+        });
+
+        // Event Ads Recycler View
+        final RecyclerView.LayoutManager mEventManagerAds = new LinearLayoutManager(SearchActivity.this, LinearLayoutManager.HORIZONTAL, false);
+
+        recyclerAds.setLayoutManager(mEventManagerAds);
+        recyclerAds.setItemAnimator(new DefaultItemAnimator());
+
+        ApiServices.service_get.getAllEvent().enqueue(new Callback<ArrayList<Event>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Event>> call, Response<ArrayList<Event>> response) {
+                mAdsList = response.body()  ;
+
+                mAdsAdapter = new EventAdapter(SearchActivity.this, mAdsList);
+                mAdsAdapter.notifyDataSetChanged();
+
+                recyclerAds.setAdapter(mAdsAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Event>> call, Throwable t) {
+                Toast.makeText(SearchActivity.this,"Mohon maaf terjadi gangguan dengan jaringan Anda", Toast.LENGTH_SHORT).show();
             }
         });
 

@@ -9,12 +9,14 @@ import android.support.v7.widget.CardView;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.TextView;
 
 import com.codesch.afdolash.meetpoint.R;
 
 public class PositionActivity extends AppCompatActivity {
 
-    private CardView cardAccept;
+    private CardView cardAccept, cardExplore;
+    private TextView tvPoint;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +31,21 @@ public class PositionActivity extends AppCompatActivity {
         changeStatusBarColor();
 
         cardAccept = (CardView) findViewById(R.id.card_accept);
+        cardExplore = (CardView) findViewById(R.id.card_explore);
+        tvPoint = (TextView) findViewById(R.id.tv_point);
 
         cardAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(PositionActivity.this, CategoryActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        cardExplore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(PositionActivity.this, MapsLocationActivity.class);
                 startActivity(intent);
             }
         });

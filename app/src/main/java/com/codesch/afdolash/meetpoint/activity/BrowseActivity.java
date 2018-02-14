@@ -80,7 +80,7 @@ public class BrowseActivity extends AppCompatActivity {
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent profileIntent =  new Intent(BrowseActivity.this, OTPActivity.class);
+                Intent profileIntent =  new Intent(BrowseActivity.this, PostEventActivity.class);
                 startActivity(profileIntent);
             }
         });

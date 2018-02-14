@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.codesch.afdolash.meetpoint.activity.MainActivity">
+    tools:context="com.codesch.afdolash.meetpoint.activity.RegisterActivity">
 
     <ViewSwitcher
         android:id="@+id/viewSwitcher"
@@ -32,87 +32,47 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true">
 
-        <ImageView
-            android:id="@+id/img_app"
-            android:layout_width="wrap_content"
-            android:layout_height="110dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginRight="16dp"
-            android:layout_marginBottom="24dp"
-            android:src="@drawable/meetpoint" />
-
-        <LinearLayout
-            android:id="@+id/linear_1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_below="@id/img_app"
-            android:layout_centerHorizontal="true"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Temukan event "
-                android:textStyle="bold"
-                android:textColor="@color/colorWhite"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="kesukaanmu"
-                android:textColor="@color/colorWhite"/>
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linear_2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
             android:layout_below="@id/linear_1"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginLeft="24dp"
+            app:cardBackgroundColor="#afffffff"
+            app:cardElevation="0dp">
 
-            android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="dan bagikan "
-                android:textColor="@color/colorWhite"/>
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Nama"
+                    android:textColorHint="@color/colorGrey800"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGrey900"
+                    android:inputType="textPersonName"
+                    android:background="@android:color/transparent"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="eventmu"
-                android:textStyle="bold"
-                android:textColor="@color/colorWhite"/>
+            </LinearLayout>
 
-        </LinearLayout>
-
-        <View
-            android:layout_width="50dp"
-            android:layout_height="2dp"
-            android:background="@color/colorWhite"
-            android:layout_toRightOf="@id/linear_1"
-            android:layout_below="@id/linear_1"
-            android:layout_marginLeft="16dp"/>
-
-        <View
-            android:layout_width="50dp"
-            android:layout_height="2dp"
-            android:background="@color/colorWhite"
-            android:layout_toLeftOf="@id/linear_1"
-            android:layout_below="@id/linear_1"
-            android:layout_marginRight="16dp"/>
+        </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
             android:id="@+id/card_email"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:layout_below="@id/linear_1"
+            android:layout_below="@id/card_name"
             android:layout_marginBottom="4dp"
-            android:layout_marginTop="48dp"
             android:layout_marginRight="24dp"
             android:layout_marginLeft="24dp"
             app:cardBackgroundColor="#afffffff"
@@ -143,10 +103,45 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_password"
+            android:id="@+id/card_telp"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_below="@id/card_email"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginLeft="24dp"
+            app:cardBackgroundColor="#afffffff"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Nomor Telepon"
+                    android:textColorHint="@color/colorGrey800"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGrey900"
+                    android:inputType="phone"
+                    android:background="@android:color/transparent"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_password"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/card_telp"
             android:layout_marginBottom="4dp"
             android:layout_marginRight="24dp"
             android:layout_marginLeft="24dp"
@@ -178,10 +173,45 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/card_login"
+            android:id="@+id/card_password2nd"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_below="@id/card_password"
+            android:layout_marginBottom="4dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginLeft="24dp"
+            app:cardBackgroundColor="#afffffff"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp">
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:hint="Konfirmasi Password"
+                    android:textColorHint="@color/colorGrey800"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorGrey900"
+                    android:inputType="textPassword"
+                    android:background="@android:color/transparent"/>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_register"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_below="@id/card_password2nd"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="4dp"
             android:layout_marginRight="24dp"
@@ -201,11 +231,11 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Login"
+                    android:layout_gravity="center"
+                    android:text="Daftar"
                     android:textAllCaps="true"
                     android:textColor="@color/colorWhite"
-                    android:textStyle="bold"
-                    android:layout_gravity="center"/>
+                    android:textStyle="bold" />
 
             </LinearLayout>
 
@@ -214,7 +244,7 @@
     </RelativeLayout>
 
     <android.support.v7.widget.CardView
-        android:id="@+id/card_register"
+        android:id="@+id/card_login"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:layout_alignParentBottom="true"
@@ -238,7 +268,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Belum punya akun ? Daftar disini"
+                android:text="Sudah punya akun ? Masuk disini"
                 android:textColor="@color/colorWhite"/>
 
         </LinearLayout>

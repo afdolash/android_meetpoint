@@ -1,5 +1,9 @@
 package com.codesch.afdolash.meetpoint.activity;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,8 +19,10 @@ import com.codesch.afdolash.meetpoint.services.ApiServices;
 import com.codesch.afdolash.meetpoint.utils.CustomClusterRenderer;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.LocationSource;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
@@ -32,7 +38,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback, GoogleMap.OnInfoWindowClickListener, LocationSource.OnLocationChangedListener {
 
     private MaterialSearchView searchView;
     private GoogleMap mMap;
@@ -121,6 +127,10 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 mMap.setOnCameraIdleListener(mClusterManager);
                 mMap.setOnMarkerClickListener(mClusterManager);
 
+                if (ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(MapsActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                    mMap.setMyLocationEnabled(true);
+                }
+
                 mClusterManager.addItems(mEventList);
 
                 CustomClusterRenderer renderer = new CustomClusterRenderer(MapsActivity.this, mMap, mClusterManager);
@@ -146,5 +156,19 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         LatLng surabaya = new LatLng(-7.255530, 112.752102);
         CameraPosition cameraPosition = new CameraPosition.Builder().target(surabaya).zoom(12).build();
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+    }
+
+    @Override
+    public void onInfoWindowClick(Marker marker) {
+        Toast.makeText(this, marker.getId().toString(), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+
+        //move map camera
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
+        mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
     }
 }

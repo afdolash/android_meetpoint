@@ -3,6 +3,8 @@ package com.codesch.afdolash.meetpoint.activity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.text.Html;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.codesch.afdolash.meetpoint.R;
@@ -86,6 +89,48 @@ public class EventDetailActivity extends AppCompatActivity {
         linearContact = (LinearLayout) findViewById(R.id.linear_contact);
         linearWebsite = (LinearLayout) findViewById(R.id.linear_website);
         linearReport = (LinearLayout) findViewById(R.id.linear_report);
+
+        tvReadMore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                tvDescription.setMaxLines(Integer.MAX_VALUE);
+                tvReadMore.setVisibility(View.GONE);
+                viewTransparent.setVisibility(View.GONE);
+            }
+        });
+
+        // People Recycler View
+        mPeopleAdapter = new AuthorAdapter(EventDetailActivity.this, mPeopleList);
+        RecyclerView.LayoutManager mAuthorManager = new LinearLayoutManager(EventDetailActivity.this, LinearLayoutManager.HORIZONTAL, false);
+
+        recyclerPeople.setLayoutManager(mAuthorManager);
+        recyclerPeople.setItemAnimator(new DefaultItemAnimator());
+        recyclerPeople.setAdapter(mPeopleAdapter);
+
+        prepareAuthorData();
+
+        // Event Recommended Recycler View
+        final RecyclerView.LayoutManager mEventManagerSimillar = new LinearLayoutManager(EventDetailActivity.this, LinearLayoutManager.HORIZONTAL, false);
+
+        recyclerSimillar.setLayoutManager(mEventManagerSimillar);
+        recyclerSimillar.setItemAnimator(new DefaultItemAnimator());
+
+        ApiServices.service_post.eventKesukaan(1).enqueue(new Callback<ArrayList<Event>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Event>> call, Response<ArrayList<Event>> response) {
+                mSimillarList = response.body()  ;
+
+                mSimillarAdapter = new EventAdapter(EventDetailActivity.this, mSimillarList);
+                mSimillarAdapter.notifyDataSetChanged();
+
+                recyclerSimillar.setAdapter(mSimillarAdapter);
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Event>> call, Throwable t) {
+                Toast.makeText(EventDetailActivity.this,"Mohon maaf terjadi gangguan dengan jaringan Anda", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         ApiServices.service_post.eventDetail(ID_EVENT).enqueue(new Callback<Event>() {
             @Override
@@ -196,5 +241,30 @@ public class EventDetailActivity extends AppCompatActivity {
         finish();
 
         return super.onSupportNavigateUp();
+    }
+
+    private void prepareAuthorData() {
+        Author author = new Author(
+                7,
+                "Afdolash",
+                "Administrator",
+                2.0f,
+                "00000",
+                17,
+                "Pria"
+        );
+
+        mPeopleList.add(author);
+        mPeopleList.add(author);
+        mPeopleList.add(author);
+        mPeopleList.add(author);
+        mPeopleList.add(author);
+        mPeopleList.add(author);
+        mPeopleList.add(author);
+        mPeopleList.add(author);
+        mPeopleList.add(author);
+        mPeopleList.add(author);
+
+        mPeopleAdapter.notifyDataSetChanged();
     }
 }

@@ -73,7 +73,6 @@ public class ApiServices {
 
         @GET("event_hari_ini")
         Call<ArrayList<Event>> getEventToday();
-
     }
 
     public interface DeleteService {

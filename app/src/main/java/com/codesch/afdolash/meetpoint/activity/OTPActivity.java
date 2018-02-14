@@ -76,7 +76,7 @@ public class OTPActivity extends AppCompatActivity {
         randomOTP = (int)(Math.random()*9000)+1000;
         String pesan = "Kode otentikasi Anda : "+ randomOTP;
 
-        ApiServices.service_post.sendOtp("6285733375343", pesan).enqueue(new Callback<String>() {
+        ApiServices.service_post.sendOtp("628124078773", pesan).enqueue(new Callback<String>() {
             @Override
             public void onResponse(Call<String> call, Response<String> response) {
                 new CountDownTimer(59000, 1000) {
