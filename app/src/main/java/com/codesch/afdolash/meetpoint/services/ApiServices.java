@@ -60,7 +60,10 @@ public class ApiServices {
 
         @FormUrlEncoded
         @POST("otp")
-        Call<String> sendOtp(@Field("nomor") String nomor, @Field("pesan") String pesan);
+        Call<String> sendOtp(
+                @Field("nomor") String nomor,
+                @Field("pesan") String pesan
+        );
 
         @FormUrlEncoded
         @POST("event_kesukaan")
